@@ -1,0 +1,36 @@
+x<-c(68,64,75,50,64,80,75,40,55,64)
+y<-c(62,58,68,45,81,60,68,48,58,70)
+
+cor<-cor(x,y)
+
+cat(cor)
+
+
+
+
+
+data(mtcars)
+model<-lm(mpg~ .,data=mtcars)
+summary(model)
+
+
+
+g<-function(t){
+    sqrt(t^2+1)
+}
+curve(g,from=0,to=5,main="plot n g(t) = (t
+2 + 1)0.5")
+
+
+
+factor<-function(n){
+    result<-1
+    for(i in 1:n){
+        result<-result*i
+    }
+    return(result)
+}
+number<-c(1,2,3,4,5)
+factorial<-sapply(number,factor)
+
+cat(factorial)
