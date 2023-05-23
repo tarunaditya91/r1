@@ -1,0 +1,66 @@
+1)
+x<-seq(1:49)
+x[x%%2==0]<-0
+x
+
+2)
+x <- c(9, 13, 21, 8, 36, 22, 12, 41, 31, 33, 19)
+
+# Set up the plot
+hist(x, xlim = c(0, 50), ylim = c(0, 5), col = "yellow", border = "red",
+     xlab = "Weight", ylab = "Frequency", main = "Colored Histogram")
+     
+3)
+x<-c(0,1,3,6,8)
+y<-c(1,3,2,5,4)
+sqx<-x^2
+xy<-x*y
+df<-data.frame(x,y,xy,sqx)
+df
+reg<-lm(y~x)
+print(reg)
+
+
+4)
+is_prime <- function(num) {
+  if (num <= 1) {
+    return(FALSE)
+  }
+  for (i in 2:sqrt(num)) {
+    if (num %% i == 0) {
+      return(FALSE)
+    }
+  }
+  return(TRUE)
+}
+
+# Generate the first 30 prime numbers
+prime_numbers <- c()
+num <- 2
+count <- 0
+
+while (count < 30) {
+  if (is_prime(num)) {
+    prime_numbers <- c(prime_numbers, num)
+    count <- count + 1
+  }
+  num <- num + 1
+}
+
+
+
+
+set 11)
+
+1)
+x <- c(21, 62, 10, 53)
+labels <- c("London", "New York", "Singapore", "Mumbai")
+colors <- rainbow(length(x))
+
+# Set up the plot
+pie(x, labels = labels, col = colors, main = "City Pie Chart")
+
+
+
+
+2)
