@@ -1,0 +1,56 @@
+1)
+serial_no<-seq(1:8)
+x<-seq(145,185,5)
+lower_limit<-seq(145,180,5)
+f<-c(4,6,28,58,64,30,5,5)
+n<-sum(f)
+class_interval<-c("145-150","150-155","155-160","160-165","165-170","170-175","175-180","180-185")
+df<-data.frame(serial_no,class_interval,lower_limit,f)
+df
+s1<-which(f==max(f))
+f1<-f[s1]
+f0<-f[s1-1]
+f2<-f[s1+1]
+l<-x[s1]
+h<-5
+mode<-l+((f1-f0)/(2*f1-f0-f2))*h
+mode
+
+
+
+2)
+recur_factorial <- function(n) {
+  if (n <= 1) {
+    return(1)
+  } else {
+    return(n * recur_factorial(n - 1))
+  }
+}
+
+num1 <- c(5)
+result <- recur_factorial(num1)
+cat("The factorial of", num1, "is", result, "\n")
+
+
+
+
+3)
+library(ggplot2)
+
+ggplot(mtcars,aes(x=as.factor(cyl),y=mpg))+geom_boxplot()
+
+
+
+4)
+# Define the function g(t)
+g <- function(t) sqrt(t^2 + 1)
+
+# Generate a sequence of values for t
+t <- seq(0, 5, length.out = 100)
+
+# Evaluate g(t) for each t value
+y <- g(t)
+
+# Plot the graph with red dotted lines
+plot(t, y, type = "l", col = "red", lty = 2, xlab = "t", ylab = "g(t)",
+     main = "Plot of g(t) = sqrt(t^2 + 1)")
